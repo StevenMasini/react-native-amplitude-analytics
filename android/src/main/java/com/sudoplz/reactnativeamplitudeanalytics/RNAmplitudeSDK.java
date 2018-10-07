@@ -191,4 +191,71 @@ public class RNAmplitudeSDK extends ReactContextBaseJavaModule {
     Amplitude.getInstance().identify(identify);
   }
 
+  /* ------ Append/Prepend to User properties ------ */
+
+  /* --- String --- */
+
+  @ReactMethod
+  public void appendToUserProperties(String key, String value) {
+    Identify identify = new Identify().append(key, value);
+    Amplitude.getInstance().identify(identify);
+  }
+
+  @ReactMethod
+  public void prependToUserProperties(String key, String value) {
+    Identify identify = new Identify().prepend(key, value);
+    Amplitude.getInstance().identify(identify);
+  }
+
+  /* --- Double --- */
+
+  @ReactMethod
+  public void appendToUserProperties(String key, double value) {
+    Identify identify = new Identify().append(key, value);
+    Amplitude.getInstance().identify(identify);
+  }
+
+  @ReactMethod
+  public void prependToUserProperties(String key, double value) {
+    Identify identify = new Identify().prepend(key, value);
+    Amplitude.getInstance().identify(identify);
+  }
+
+  /* --- Integer --- */
+
+  @ReactMethod
+  public void appendToUserProperties(String key, int value) {
+    Identify identify = new Identify().append(key, value);
+    Amplitude.getInstance().identify(identify);
+  }
+
+  @ReactMethod
+  public void prependToUserProperties(String key, int value) {
+    Identify identify = new Identify().prepend(key, value);
+    Amplitude.getInstance().identify(identify);
+  }
+
+  /* --- Object --- */
+
+  @ReactMethod
+  public void appendToUserProperties(String key, ReadableMap object) {
+    Amplitude.getInstance().append(key, object);
+  }
+
+  @ReactMethod
+  public void prependToUserProperties(String key, ReadableMap object) {
+    Amplitude.getInstance().prepend(key, object);
+  }
+
+  /* --- Array --- */
+
+  @ReactMethod
+  public void appendToUserProperties(String key, ReadableArray array) {
+    Amplitude.getInstance().append(key, array);
+  }
+
+  @ReactMethod
+  public void prependToUserProperties(String key, ReadableArray array) {
+    Amplitude.getInstance().prepend(key, array);
+  }
 }
